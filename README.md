@@ -115,7 +115,7 @@ cd frontend
 npm install
 ```
 
-2. Rode a API:
+2. Rode o APP:
 
 ```
 npm run dev
