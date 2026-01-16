@@ -3,8 +3,10 @@ type CacheItem<T> = {
   timestamp: number;
 };
 
+// cache em memória (RAM)
 const memoryCache = new Map<string, CacheItem<any>>();
 
+// tempo de vida do cache (TTL: Time To Live) -> 10min
 const CACHE_TTL = 1000 * 60 * 10; 
 
 export function getCache<T>(key: string): T | null {
@@ -15,6 +17,7 @@ export function getCache<T>(key: string): T | null {
     return memoryItem.data;
   }
 
+  // se não estiver na RAM, tenta buscar no localStorage
   const stored = localStorage.getItem(key);
   if (stored) {
     const parsed: CacheItem<T> = JSON.parse(stored);

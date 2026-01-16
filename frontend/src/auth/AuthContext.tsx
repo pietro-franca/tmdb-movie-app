@@ -16,10 +16,15 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 
+// centraliza as operações de login, cadastro e logout
+// garante que os demais componentes saibam se um usuário foi autenticado
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // ao carregar, tenta buscar os dados do usuário atual
+  // permite que um usuário permaneça logado depois de um F5
   useEffect(() => {
     getMe()
       .then(setUser)

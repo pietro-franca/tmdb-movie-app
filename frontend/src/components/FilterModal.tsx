@@ -43,6 +43,7 @@ export default function FilterModal({ isOpen, onClose, onApply }: FilterModalPro
           <button aria-label="Exit Button" onClick={onClose} className="text-zinc-500 hover:text-white cursor-pointer"><X /></button>
         </div>
 
+        {/* filtro por data de lançamento */}
         <div className="mb-8">
           <h3 className="text-sm font-semibold text-zinc-400 mb-4 uppercase tracking-wider">Período de Lançamento</h3>
           <div className="flex gap-4 mb-2 font-medium">
@@ -67,6 +68,7 @@ export default function FilterModal({ isOpen, onClose, onApply }: FilterModalPro
           </div>
         </div>
 
+        {/* filtro por gênero */}
         <div className="mb-10">
           <h3 className="text-sm font-semibold text-zinc-400 mb-4 uppercase tracking-wider">Gêneros</h3>
           <div className="flex flex-wrap gap-2">

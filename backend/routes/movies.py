@@ -7,6 +7,8 @@ from services.tmdb_service import (
 
 movies_bp = Blueprint("movies", __name__, url_prefix="/api")
 
+# retorna lista de filmes em páginas 
+# -> necessário pro scroll infinito
 @movies_bp.route("/search")
 def search():
   query = request.args.get("query")

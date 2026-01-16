@@ -47,6 +47,9 @@ export default function Home() {
     }
   };
 
+  // cuida de chamadas "discover" (busca por filtro/popularidade) e "search" (busca por texto)
+  // capaz de mesclar os dois métodos para listar os filmes filtrados
+  // gerencia o sistema de paginação para funcionar o scroll infinito
   const fetchMovies = async (
     searchQuery: string,
     filters: any,
@@ -88,17 +91,20 @@ export default function Home() {
     }
   };
 
+  // a cada carregamento, escolhe aleatoriamente o backdrop (imagem de fundo da barra de pesquisa)
   useEffect(() => {
     const randomBg =
       backdrops[Math.floor(Math.random() * backdrops.length)];
     setHeroBackdrop(randomBg);
   }, []);
 
+  // debounce -> responsável por monitorar mudanças na busca e nos filtros
   useEffect(() => {
     setMovies([]);
     setPage(1);
     setHasMore(true);
 
+    // o timeout de 500ms evita enviar requisições a cada tecla digitada
     const timer = setTimeout(() => {
       fetchMovies(query, activeFilters, 1, true);
     }, 500);
@@ -108,6 +114,8 @@ export default function Home() {
 
   const observer = useRef<IntersectionObserver | null>(null);
 
+  // ref de callback no último card
+  // quando ele entra na visão do usuário carrega a próxima página, dando a impressão de scroll infinito
   const lastMovieRef = useCallback(
     (node: HTMLDivElement | null) => {
       if (loading) return;

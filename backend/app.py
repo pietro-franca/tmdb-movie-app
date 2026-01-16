@@ -41,6 +41,7 @@ def create_app():
 
 app = create_app()
 
+# rota para testar o status da aplicação
 @app.route("/api/health")
 def health():
   return {"status": "ok"}

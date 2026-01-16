@@ -1,6 +1,6 @@
 import jwt
 from datetime import datetime, timedelta, timezone
-from flask import current_app, jsonify, request, g
+from flask import current_app, jsonify, request
 from functools import wraps
 from models.user import User
 import logging
@@ -28,6 +28,9 @@ def decode_token(token: str):
     options={"verify_exp": True}
   )
 
+# decorator usado para proteger rotas da API
+# verifica se o token JWT está presente na requisição e se é válido
+# uma vez verificado, o usuário em questão fica autenticado por 7 dias
 def jwt_required(fn):
   @wraps(fn)
   def wrapper(*args, **kwargs):

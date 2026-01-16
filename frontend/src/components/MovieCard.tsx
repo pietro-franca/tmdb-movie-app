@@ -11,8 +11,9 @@ export default function MovieCard({ movie, onClick }: Props) {
       onClick={onClick} 
       className="relative cursor-pointer transition-transform hover:scale-105 group"
     >
+      {/* placeholder para caso o filme não tenha poster */}
       <img
-        src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "placeholder.png"}
+        src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "https://placehold.co/500x750/09090b/8b5cf6?text=Sem+Poster"}
         alt={movie.title}
         className="rounded-xl"
       />

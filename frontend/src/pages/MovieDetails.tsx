@@ -43,6 +43,7 @@ export default function MovieDetails() {
     }
   };
 
+  // salva ou atualiza a avaliação no banco de dados
   const handleSaveRating = async (rate: number) => {
     if (!movie) return;
 
@@ -91,7 +92,7 @@ export default function MovieDetails() {
           getMovieCredits(Number(id)),
         ]);
         setMovie(movieRes.data);
-        setCast(castRes.data.cast.slice(0, 10)); // Aumentei para 10 atores
+        setCast(castRes.data.cast.slice(0, 10)); 
       } catch {
         setError("Erro ao carregar detalhes");
       } finally {

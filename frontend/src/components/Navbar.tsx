@@ -21,6 +21,7 @@ export default function Navbar() {
       <div className="flex items-center gap-4">
         <div className="hidden sm:flex items-center gap-3 pr-4 border-r border-white/10">
           <span className="text-md text-white">{user?.username}</span>
+          {/* cria uma "foto" de avatar a partir das duas primeiras letras do nome do usuário */}
           <img 
             src={`https://ui-avatars.com/api/?name=${user?.username}&background=random`} 
             alt="Avatar" 

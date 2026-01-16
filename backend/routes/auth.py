@@ -41,6 +41,7 @@ def login():
   except ValueError as e:
     return jsonify({"error": str(e)}), 401
 
+# retorna as informações do usuário autenticado
 @auth_bp.route("/me", methods=["GET"])
 @jwt_required
 def me():

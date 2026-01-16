@@ -15,6 +15,7 @@ export default function ProtectedRoute({ children }: { children: JSX.Element }) 
     );
   }
 
+  // se não houver usuário autenticado, redireciona pra página de login
   if (!user) {
     return <Navigate to="/login" replace />;
   }

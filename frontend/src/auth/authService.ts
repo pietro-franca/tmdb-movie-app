@@ -10,6 +10,7 @@ export async function register(username: string, email: string, password: string
 
 export async function logout() {
   await backendApi.post("/auth/logout");
+  // cache armazenado no local storage é limpo após o logout
   localStorage.clear();
 }
 
