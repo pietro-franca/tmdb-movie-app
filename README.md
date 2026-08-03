@@ -1,55 +1,54 @@
 # TMDB SEARCH APP
 
-Aplicação web para explorar, buscar e avaliar filmes utilizando a API do TMDB. Possui autenticação de usuários com JWT, filtros, scroll infinito e cache de dados para melhor performance.
-
+A web application for exploring, searching for, and rating movies using the TMDB API. It features user authentication with JWT, filters, infinite scrolling, and data caching for better performance.
 ---
 
-![Página Inicial](./assets/Captura%20de%20tela%202026-01-16%20162859.png)
+![Home Page](./assets/Captura%20de%20tela%202026-01-16%20162859.png)
 
-## 🚀 Tecnologias Utilizadas
+## Technologies Used
 
 ### **Frontend**
-* **React + Vite**: Ambiente de desenvolvimento ultra-rápido.
-* **TypeScript**: Segurança e inteligência no código com tipagem estática.
-* **Tailwind CSS**: Estilização moderna com foco em performance e design responsivo.
-* **Lucide React**: Biblioteca de ícones elegantes.
-* **Context API**: Gerenciamento de estado global para autenticação.
+* **React + Vite**: Ultra-fast development environment.
+* **TypeScript**: Code safety and intelligence with static typing.
+* **Tailwind CSS**: Modern styling with a focus on performance and responsive design.
+* **Lucide React**: A library of elegant icons.
+* **Context API**: Global state management for authentication.
 
 ### **Backend**
-* **Python + Flask**: Micro-framework para uma API ágil e leve.
-* **SQLAlchemy**: ORM para manipulação de banco de dados SQL.
-* **JWT (JSON Web Tokens)**: Segurança no tráfego de dados e controle de acesso.
-* **Docker**: Conteinerização para garantir que o app rode em qualquer lugar.
+* **Python + Flask**: A micro-framework for an agile and lightweight API.
+* **SQLAlchemy**: An ORM for SQL database manipulation.
+* **JWT (JSON Web Tokens)**: Data traffic security and access control.
+* **Docker**: Containerization to ensure the app runs anywhere.
 
 ---
 
-## Funcionalidades
+## Features
 
-- Buscar filmes por nome
-- Filtrar por gênero e data de lançamento
-- Scroll infinito para explorar mais filmes
-- Avaliar filmes (nota de 0 a 5)
-- Visualizar detalhes do filme e elenco
-- Login e cadastro com JWT e Cookies HttpOnly
-- Cache de resultados para melhorar performance
+- Search for movies by name
+- Filter by genre and release date
+- Infinite scroll to explore more movies
+- Rate movies (rating from 0 to 5)
+- View movie and cast details
+- Login and registration using JWT and HttpOnly cookies
+- Cache results to improve performance
 
 ---
 
-## Pré-requisitos
+## Prerequisites
 
-Antes de rodar a aplicação, você precisa ter instalados em sua máquina os seguintes softwares:
+Before running the application, you must have the following software installed on your machine:
 
 ### Backend (Flask)
 
 - [Python](https://www.python.org/) >= 3.10
-- [pip](https://pip.pypa.io/en/stable/) (gerenciador de pacotes do Python)
+- [pip](https://pip.pypa.io/en/stable/) (Python package manager)
 
 ### Frontend (React + Typescript + Vite)
 
 - [Node.js](https://nodejs.org/) >= 18
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-### Docker (opcional)
+### Docker (optional)
 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
@@ -57,22 +56,22 @@ Antes de rodar a aplicação, você precisa ter instalados em sua máquina os se
 ### API Keys
 
 - **TMDB API Key:**  
-  Crie uma conta em [The Movie Database (TMDB)](https://www.themoviedb.org/) e gere sua chave de API.
+  Create an account on [The Movie Database (TMDB)](https://www.themoviedb.org/) and generate your API key.
 - **JWT Secret Key:**  
-  Uma string aleatória segura usada para gerar tokens JWT.
+  A secure random string used to generate JWT tokens.
 
 ---
 
-## Configuração do Projeto
+## Project Setup
 
-1. Clone o repositório:
+1. Clone the repository:
 
 ```
-git clone https://github.com/seu-usuario/tmdb-movie-app.git
+git clone https://github.com/your-user/tmdb-movie-app.git
 cd tmdb-movie-app
 ```
 
-2. Crie os arquivos .env com as variáveis de ambiente:
+2. Create the .env files with the environment variables:
 
 - Backend (backend/.env):
 
@@ -87,78 +86,78 @@ SECRET_KEY=YOUR_JWT_SECRET_KEY
 VITE_TMDB_TOKEN=YOUR_TMDB_API_KEY
 ```
 
-## Rodando localmente
+## Running Locally
 
 ### Backend
 
-1. Instale as dependências:
+1. Install the dependencies:
 
 ```
 cd backend
 pip install -r requirements.txt
 ```
 
-2. Rode a API:
+2. Run the API:
 
 ```
 py app.py
 ```
 
-O backend estará disponível em `http://localhost:5000`
+The backend will be available at `http://localhost:5000`
 
 ### Frontend
 
-1. Instale as dependências:
+1. Install the dependencies:
 
 ```
 cd frontend
 npm install
 ```
 
-2. Rode o APP:
+2. Run the app:
 
 ```
 npm run dev
 ```
 
-O frontend estará disponível em `http://localhost:5173`
+The frontend will be available at `http://localhost:5173`
 
-### Rodando com Docker
+### Running with Docker
 
-1. Certifique-se de que o docker está rodando na sua máquina (abra o Docker Desktop)
+1. Make sure Docker is running on your machine (open Docker Desktop)
 
-2. Suba os containers:
+2. Start the containers:
 
 ```
 docker compose up --build
 ```
 
-3. Acesse a aplicação:
+3. Access the application:
 
 ```
 Frontend -> http://localhost:5173
 Backend -> http://localhost:5000
 ```
 
-4. Para derrubar os containers:
+4. To stop the containers:
 
 ```
 docker compose down
 ```
 
-Para uma próxima vez que for rodar a aplicação, basta rodar:
+The next time you want to run the application, simply run:
 
 ```
 docker compose up
 ```
 
-## Prints
+## Some Screenshots
 
 
 ![Login](./assets/Captura%20de%20tela%202026-01-16%20162527.png)
 
-![Filmes Avaliados](./assets/Captura%20de%20tela%202026-01-16%20162959.png)
+![Rated Movies](./assets/Captura%20de%20tela%202026-01-16%20162959.png)
 
-![Mobile Busca](./assets/Captura%20de%20tela%202026-01-16%20163103.png)
+![Mobile Search](./assets/Captura%20de%20tela%202026-01-16%20163103.png)
 
-![Mobile Filme](./assets/Captura%20de%20tela%202026-01-16%20163125.png)
+![Mobile Movie](./assets/Captura%20de%20tela%202026-01-16%20163125.png)
