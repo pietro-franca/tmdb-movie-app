@@ -1,7 +1,6 @@
 # TMDB SEARCH APP
 
 A web application for exploring, searching for, and rating movies using the TMDB API. It features user authentication with JWT, filters, infinite scrolling, and data caching for better performance.
----
 
 ![Home Page](./assets/Captura%20de%20tela%202026-01-16%20162859.png)
 
